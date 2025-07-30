@@ -1,0 +1,33 @@
+{% block crop_widget %}
+    <div
+            class="ea-az-crop-field-wrapper"
+            data-responsive="{{ cropperSettings.isResponsive() ? 'true' : 'false' }}"
+            data-zoomable="{{ cropperSettings.isZoomable() ? 'true' : 'false' }}"
+            data-scalable="{{ cropperSettings.isScalable() ? 'true' : 'false' }}"
+            data-aspect-ratio="{{ cropperSettings.getAspectRatio() ?? '' }}"
+            data-view-mode="{{ cropperSettings.getViewMode() }}"
+            data-auto-crop-area="{{ cropperSettings.getAutoCropArea() }}"
+            data-unit="{{ cropperSettings.getUnit() }}"
+    >
+        <div class="ea-az-cropper-container">
+            <img class="ea-az-cropper-preview" src="{{ value.oldImage }}" alt/>
+            <div class="ea-az-cropper-actions">
+                <input type="file" name="{{ full_name }}[image]" hidden class="ea-az-crop-input"/>
+                <button type="button" class="ea-az-btn-change btn btn-secondary">
+                    {{ 'ea.az.cropper.change'|trans }}
+                </button>
+                <button type="button" class="ea-az-btn-crop btn btn-primary" disabled>
+                    {{ 'ea.az.cropper.crop'|trans }}
+                </button>
+                <button type="button" class="ea-az-btn-delete btn btn-danger" {{ not value.oldImage and 'disabled' }}">
+                    {{ 'ea.az.cropper.delete'|trans }}
+                </button>
+            </div>
+        </div>
+        {{ form_widget(form.oldImage, { attr: { class: 'ea-az-crop-input-old-image' } }) }}
+        {{ form_widget(form.x,        { attr: { class: 'ea-az-crop-input-x' } }) }}
+        {{ form_widget(form.y,        { attr: { class: 'ea-az-crop-input-y' } }) }}
+        {{ form_widget(form.width,    { attr: { class: 'ea-az-crop-input-width' } }) }}
+        {{ form_widget(form.height,   { attr: { class: 'ea-az-crop-input-height' } }) }}
+    </div>
+{% endblock %}

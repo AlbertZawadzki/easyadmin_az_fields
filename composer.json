@@ -1,0 +1,28 @@
+{
+  "name": "azaw/easyadmin-az-fields",
+  "description": "Custom EasyAdmin fields by AZ",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "EasyAdminAzFields\\": "src/",
+      "EasyAdminAzFields\\Contracts\\": "contracts/"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "symfony/form": "^5.4 || ^6.0 || ^7.0",
+    "symfony/http-foundation": "^5.4 || ^6.0 || ^7.0",
+    "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.0",
+    "easycorp/easyadmin-bundle": "^4.0",
+    "ext-fileinfo": "*"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "public-dir": "Resources/public"
+  }
+}

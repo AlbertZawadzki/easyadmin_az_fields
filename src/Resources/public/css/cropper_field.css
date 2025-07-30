@@ -1,0 +1,33 @@
+.ea-az-crop-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.ea-az-cropper-container {
+    border: 1px dashed var(--bs-border-color);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 8px;
+}
+
+.ea-az-cropper-preview {
+    height: 300px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.ea-az-cropper-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+}
+
+.ea-az-crop-input {
+    margin: auto;
+}

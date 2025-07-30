@@ -1,0 +1,6 @@
+ea:
+  az:
+    cropper:
+      change: "Change"
+      crop: "Crop"
+      delete: "Delete"
