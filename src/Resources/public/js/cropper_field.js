@@ -33,6 +33,7 @@ const addCropperInputListener = (input) => {
     const reader = new FileReader();
     const container = input.closest('.ea-az-crop-field-wrapper');
     const image = container.querySelector(`.ea-az-cropper-preview`);
+    const oldImage = container.querySelector(`.${basicCropInputClass}-old-image`);
     const xField = container.querySelector(`.${basicCropInputClass}-x`);
     const yField = container.querySelector(`.${basicCropInputClass}-y`);
     const widthField = container.querySelector(`.${basicCropInputClass}-width`);
@@ -79,6 +80,7 @@ const addCropperInputListener = (input) => {
             cropperInstance.destroy();
             cropperInstance = null;
         }
+        oldImage.value = '';
         image.src = '';
         input.value = '';
     });
