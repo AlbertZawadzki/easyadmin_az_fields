@@ -7,8 +7,9 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 interface CropDataTransformerInterface extends DataTransformerInterface
 {
-    public function transform(mixed $value): CropperValueDto;
+    /** @return CropperValueDto */
+    public function transform(mixed $value): mixed;
 
     /** @param CropperValueDto $value */
-    public function reverseTransform(mixed $value);
+    public function reverseTransform(mixed $value): mixed;
 }
