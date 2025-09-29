@@ -1,8 +1,18 @@
 const basicCropInputClass = 'ea-az-crop-input';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cropperInputs = document.querySelectorAll(`.${basicCropInputClass}`);
-    cropperInputs.forEach(addCropperInputListener)
+    const cropperObserver = new MutationObserver(() => {
+        const cropperInputs = document.querySelectorAll(`.${basicCropInputClass}`);
+        cropperInputs.forEach(addCropperInputListener);
+    });
+
+    cropperObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+
+    const initialInputs = document.querySelectorAll(`.${basicCropInputClass}`);
+    initialInputs.forEach(addCropperInputListener);
 });
 
 const getCropperSettings = (element) => {
