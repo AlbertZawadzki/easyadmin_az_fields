@@ -1,0 +1,26 @@
+{% block coordinates_widget %}
+    {% set coords = value ?? null %}
+    {% set lat = coords ? coords.latitude : 48.8566 %}
+    {% set lng = coords ? coords.longitude : 2.3522 %}
+
+    <div class="ea-coordinates-field"
+         data-lat="{{ value.latitude|default(48.8566) }}"
+         data-lng="{{ value.longitude|default(2.3522) }}"
+         data-zoom="13"
+    >
+        <div class="ea-coordinates-map" style="height: 300px; margin-bottom: 1rem;"></div>
+
+        <input
+                type="hidden"
+                class="ea-coordinates-lat"
+                name="{{ full_name }}[latitude]"
+                value="{{ value.latitude|default('') }}"
+        />
+        <input
+                type="hidden"
+                class="ea-coordinates-lng"
+                name="{{ full_name }}[longitude]"
+                value="{{ value.longitude|default('') }}"
+        />
+    </div>
+{% endblock %}
