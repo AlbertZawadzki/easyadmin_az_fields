@@ -16,10 +16,11 @@ final class NestedEntityFilter implements FilterInterface
 
     private string $propertyPath;
 
-    public static function new(string $formFieldName, string $propertyPath, string $targetEntityClass, ?string $label = null): self
+    public static function new(string $propertyPath, string $targetEntityClass, ?string $label = null): self
     {
         $filter = new self();
         $filter->propertyPath = $propertyPath;
+        $formFieldName = str_replace('.', '_', $propertyPath);
 
         return $filter
             ->setFilterFqcn(__CLASS__)
