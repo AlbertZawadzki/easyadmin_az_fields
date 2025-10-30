@@ -31,3 +31,8 @@
 .ea-az-crop-input {
     margin: auto;
 }
+
+.ea-az-cropper-actions .btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

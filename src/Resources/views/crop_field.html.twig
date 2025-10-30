@@ -19,7 +19,7 @@
                 <button type="button" class="ea-az-btn-crop btn btn-primary" disabled>
                     {{ 'ea.az.cropper.crop'|trans }}
                 </button>
-                <button type="button" class="ea-az-btn-delete btn btn-danger" {{ not value.oldImage and 'disabled' }}>
+                <button type="button" class="ea-az-btn-delete btn btn-danger" {{ not value.oldImage ? 'disabled' : '' }}>
                     {{ 'ea.az.cropper.delete'|trans }}
                 </button>
             </div>
