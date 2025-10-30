@@ -102,9 +102,6 @@ const addCropperInputListener = (input) => {
 
     btnChange.addEventListener('click', () => {
         input.click();
-        btnChange.disabled = true;
-        btnCrop.disabled = true;
-        btnDelete.disabled = true;
     });
 
     btnCrop.addEventListener('click', () => {
