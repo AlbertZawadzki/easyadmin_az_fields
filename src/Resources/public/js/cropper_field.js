@@ -38,6 +38,11 @@ const getCropperSettings = (element) => {
 }
 
 const addCropperInputListener = (input) => {
+    if (input.dataset.registered) {
+        return;
+    }
+    input.dataset.registered = true;
+
     const CropperClass = Cropper.default || Cropper;
     let cropperInstance = null;
     const reader = new FileReader();
