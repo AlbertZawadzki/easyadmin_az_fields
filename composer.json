@@ -11,15 +11,15 @@
   },
   "require": {
     "php": ">=8.0",
-    "symfony/form": "^5.4 || ^6.0 || ^7.0",
-    "symfony/http-foundation": "^5.4 || ^6.0 || ^7.0",
-    "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.0",
+    "symfony/form": "^5.4 || ^6.0 || ^7.0 || ^8.0",
+    "symfony/http-foundation": "^5.4 || ^6.0 || ^7.0 || ^8.0",
+    "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.0 || ^8.0",
     "easycorp/easyadmin-bundle": "^4.0",
     "ext-fileinfo": "*",
     "doctrine/orm": "^2.5"
   },
   "require-dev": {
-    "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0"
+    "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0 || ^8.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
