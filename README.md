@@ -4,8 +4,11 @@
 
 - [CropField](#cropfield)
 - [CoordinatesField](#coordinatesfield)
+- [RichEditorField](#richEditorField)
 
 ## CropField
+
+Used for cropping images. If not image file provided, it will be left alone but still uploadable.
 
 ### Example CropDataTransformer:
 
@@ -170,6 +173,8 @@ AssociationField::new('backgroundImage', "")
 
 ## CoordinatesField
 
+Used for coordinates inside your entity. Values are under `{fileName}_latitude` and `{fileName}_longitude`.
+
 ### Add coordinates to your entity (YourEntity)
 
 ```php
@@ -202,8 +207,15 @@ class YourEntity
 
 ### Field usage in CRUD
 ```php
-use EasyAdminAzFields\Form\CoordinatesField;
+CoordinatesField::new('coordinates', "Geo location");
+```
 
-CoordinatesField::new('coordinates', "Geo location")
-            ->hideOnIndex(),
+## RichEditorField
+
+Used as an html editor. TinyMCE in version 5.1.1 is used.<br/>
+By using this package you automatically selfhost TinyMCE.
+
+### Field usage in CRUD
+```php
+RichEditorField::new('content', "HTML content");
 ```

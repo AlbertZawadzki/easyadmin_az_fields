@@ -1,0 +1,17 @@
+{% block rich_editor_widget %}
+    <textarea
+            class="ea-az-rich-editor-field"
+            name="{{ full_name }}"
+
+            data-allowScriptUrls="{{ allowScriptUrls ? 'true' : 'false' }}"
+            data-relativeUrls="{{ relativeUrls ? 'true' : 'false' }}"
+            data-language="{{ language }}"
+            data-spellcheckerLanguages="{{ spellcheckerLanguages|join(',') }}"
+            data-height="{{ height }}"
+            data-entityEncoding="{{ entityEncoding }}"
+            data-browserSpellcheck="{{ browserSpellcheck ? 'true' : 'false' }}"
+            data-plugins="{{ plugins|join(',') }}"
+            data-toolbar="{{ toolbar }}"
+            data-pasteAsText="{{ pasteAsText ? 'true' : 'false' }}"
+    >{{ value }}</textarea>
+{% endblock %}
