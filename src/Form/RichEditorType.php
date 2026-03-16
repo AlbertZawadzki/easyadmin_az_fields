@@ -11,16 +11,21 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RichEditorType extends AbstractType
 {
-    public const OPTION_ALLOW_SCRIPT_URLS = "allowScriptUrls";
-    public const OPTION_RELATIVE_URLS = "relativeUrls";
-    public const OPTION_LANGUAGE = "language";
-    public const OPTION_SPELLCHECKER_LANGUAGES = "spellcheckerLanguages";
-    public const OPTION_HEIGHT = "height";
-    public const OPTION_ENTITY_ENCODING = "entityEncoding";
-    public const OPTION_BROWSER_SPELLCHECK = "browserSpellcheck";
-    public const OPTION_PLUGINS = "plugins";
-    public const OPTION_TOOLBAR = "toolbar";
-    public const OPTION_PASTE_AS_TEXT = "pasteAsText";
+    public const string OPTION_ALLOW_SCRIPT_URLS = "allowScriptUrls";
+    public const string OPTION_RELATIVE_URLS = "relativeUrls";
+    public const string OPTION_LANGUAGE = "language";
+    public const string OPTION_SPELLCHECKER_LANGUAGES = "spellcheckerLanguages";
+    public const string OPTION_HEIGHT = "height";
+    public const string OPTION_ENTITY_ENCODING = "entityEncoding";
+    public const string OPTION_BROWSER_SPELLCHECK = "browserSpellcheck";
+    public const string OPTION_PLUGINS = "plugins";
+    public const string OPTION_TOOLBAR = "toolbar";
+    public const string OPTION_PASTE_AS_TEXT = "pasteAsText";
+
+    public function getBlockPrefix(): string
+    {
+        return 'rich_editor';
+    }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
