@@ -21,7 +21,8 @@ class CropField implements FieldInterface
             ->addCssFiles('/bundles/easyadminazfields/vendor/cropperjs/cropper.min.css')
             ->addJsFiles('/bundles/easyadminazfields/js/cropper_field.js')
             ->addCssFiles('/bundles/easyadminazfields/css/cropper_field.css')
-            ->addFormTheme('@EasyAdminAzFields/crop_field.html.twig');
+            ->addFormTheme('@EasyAdminAzFields/crop_field.html.twig')
+            ->setTemplatePath('@EasyAdminAzFields/crop_field.html.twig');
     }
 
     public function setDataTransformer(CropDataTransformerInterface $dataTransformer): self

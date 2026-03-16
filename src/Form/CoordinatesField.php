@@ -17,6 +17,7 @@ final class CoordinatesField implements FieldInterface
             ->setLabel($label ?: $propertyName)
             ->addJsFiles('/bundles/easyadminazfields/vendor/')
             ->addJsFiles('/bundles/easyadminazfields/js/coordinates_field.js')
-            ->addFormTheme('@EasyAdminAzFields/coordinates_field.html.twig');
+            ->addFormTheme('@EasyAdminAzFields/coordinates_field.html.twig')
+            ->setTemplatePath('@EasyAdminAzFields/coordinates_field.html.twig');
     }
 }

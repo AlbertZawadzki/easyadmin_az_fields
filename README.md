@@ -6,29 +6,6 @@
     <li><a href="#coordinates-field">CoordinatesField</a></li>
 </ul>
 
-<h2>Start up</h2>
-<p>I have no idea what I did wrong (yet) but in my DashboardController I had to add:</p>
-<pre>
-
-    public function configureAssets(): Assets
-    {
-        return parent::configureAssets()
-            ->addJsFile('/bundles/easyadminazfields/js/coordinates_field.js')
-            ->addJsFile('/bundles/easyadminazfields/vendor/cropperjs/cropper.min.js')
-            ->addCssFile('/bundles/easyadminazfields/vendor/cropperjs/cropper.min.css')
-            ->addJsFile('/bundles/easyadminazfields/js/cropper_field.js')
-            ->addCssFile('/bundles/easyadminazfields/css/cropper_field.css');
-    }
-
-    public function configureCrud(): Crud
-    {
-        return parent::configureCrud()
-            ->addFormTheme('@EasyAdminAzFields/crop_field.html.twig')
-            ->addFormTheme('@EasyAdminAzFields/coordinates_field.html.twig');
-    }
-</pre>
-
-
 <h2 id="crop-field">CropField</h2>
 
 <h3>Example CropDataTransformer</h3>
