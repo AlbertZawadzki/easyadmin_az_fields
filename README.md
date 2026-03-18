@@ -10,6 +10,18 @@
 
 Used for cropping images. If not image file provided, it will be left alone but still uploadable.
 
+### Field usage in CRUD
+```php
+CropField::new('backgroundImage', "")
+    ->setRequired(false)
+    ->setFormType(FileForm::class)
+    ->setFormTypeOption(
+        CropType::OPTION_CROPPER_SETTINGS,
+        new CropperSettingsDto()
+            ->setAspectRatio(16 / 10)
+    ),
+```
+
 ### Example CropDataTransformer:
 
 ```php
@@ -159,21 +171,14 @@ class FileForm extends AbstractType
 }
 ```
 
-### Field usage in CRUD
-```php
-AssociationField::new('backgroundImage', "")
-    ->setRequired(false)
-    ->setFormType(FileForm::class)
-    ->setFormTypeOption(
-        CropType::OPTION_CROPPER_SETTINGS,
-        new CropperSettingsDto()
-            ->setAspectRatio(16 / 10)
-    ),
-```
-
 ## CoordinatesField
 
-Used for coordinates inside your entity. Values are under `{fileName}_latitude` and `{fileName}_longitude`.
+Used for coordinates inside your entity. Values are under `{fieldName}_latitude` and `{fieldName}_longitude`.
+
+### Field usage in CRUD
+```php
+CoordinatesField::new('coordinates', "Geo location");
+```
 
 ### Add coordinates to your entity (YourEntity)
 
@@ -203,11 +208,6 @@ class YourEntity
         return $this;
     }
 }
-```
-
-### Field usage in CRUD
-```php
-CoordinatesField::new('coordinates', "Geo location");
 ```
 
 ## RichEditorField
