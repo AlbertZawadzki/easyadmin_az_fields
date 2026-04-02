@@ -10,7 +10,7 @@ class RichEditorField implements FieldInterface
 {
     use FieldTrait;
 
-    public static function new(string $propertyName, TranslatableInterface|string|bool|null $label = null): FieldInterface
+    public static function new(string $propertyName, TranslatableInterface|string|bool|null $label = null): self
     {
         return (new self())
             ->setProperty($propertyName)
