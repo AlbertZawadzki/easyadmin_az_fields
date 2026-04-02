@@ -19,7 +19,13 @@
     "doctrine/orm": "^2 || ^3"
   },
   "require-dev": {
-    "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0 || ^8.0"
+    "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0 || ^8.0",
+    "phpunit/phpunit": "^13.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "EasyAdminAzFields\\Tests\\": "tests/"
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
