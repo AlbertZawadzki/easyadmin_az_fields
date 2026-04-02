@@ -4,12 +4,13 @@ namespace EasyAdminAzFields\Form;
 
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
+use Symfony\Contracts\Translation\TranslatableInterface;
 
 final class CoordinatesField implements FieldInterface
 {
     use FieldTrait;
 
-    public static function new(string $propertyName, ?string $label = ''): self
+    public static function new(string $propertyName, TranslatableInterface|string|bool|null $label = null): FieldInterface
     {
         return (new self())
             ->setFormType(CoordinatesType::class)
